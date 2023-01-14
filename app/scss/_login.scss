@@ -1,0 +1,123 @@
+.popup__login{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    user-select: none;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    &.open{
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;   
+    }
+    &-body{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: $brown, $alpha: 0.7);
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &-close{
+        position: absolute;
+        font-size: 40px;
+        right: 2%;
+        top: 2%;
+        color: $brown;
+        transition: color 0.3s ease-out;
+        @media(any-hover:hover){
+            &:hover{
+                color: $orange;
+            }
+        }
+    }
+    &-content{
+        position: relative;
+        margin: auto;
+        background-color: $white;
+        border-radius: 5px;
+        flex: 0 1 500px;
+        height: auto;
+        padding: 40px 40px;
+
+    }
+
+    
+}
+.login-content{
+    &__title{
+        text-align: center;
+        font-weight: 700;
+        font-size: clamp(1.25rem, 0.957rem + 1.46vw, 2rem);
+        line-height: 39px;
+        color: $brown;
+        margin-bottom: 20px;
+    }
+    &__buttton{
+        width: 100%;
+        margin-top: 15px;
+    }
+    &__form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    &__label{
+        display: inline-flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    &__text{
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        margin-bottom: 5px;
+    }
+    &__input{
+        border: none;
+        outline: none;
+        width: 400px;
+        padding: 15px 20px;
+        &:focus{
+            border: 1px solid $orange;
+        }
+    }
+    &__link{
+        display: inline-block;
+        margin-top: 15px;
+        text-align: center;
+        color: $brown;
+        transition: color 0.3s ease-out;
+        @media(any-hover:hover){
+            &:hover{
+                color: $orange;
+            }
+        }
+    }
+}
+#password{
+    position: relative;
+    svg{
+        cursor: pointer;
+        position: absolute;
+        right: 5%;
+        top: 60%;
+        transition: all 0.3s ease-out;
+    }
+    &.active{
+        svg{
+            path{
+                fill: $orange;
+            }
+        }
+    }
+}

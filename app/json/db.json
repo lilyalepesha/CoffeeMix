@@ -1,0 +1,61 @@
+[
+
+        {
+            "id": "01",
+            "imgSrc": "latte.png" ,
+            "title": "Латте",
+            "cost": "2.40",
+            "size": "0,45л"
+        },
+        {
+            "id": "02",
+            "imgSrc": "cappuchino.png" ,
+            "title": "Капучинно",
+            "cost": "2.60",
+            "size": "0,5л"
+        },
+        {
+            "id": "03",
+            "imgSrc": "mokko.png" ,
+            "title": "Мокко",
+            "cost": "2.80",
+            "size": "0,5л"
+        },
+        {
+            "id": "04",
+            "imgSrc": "raf.png" ,
+            "title": "Мокко",
+            "cost": "2.80",
+            "size": "0,5л"
+        },
+        {
+            "id": "05",
+            "imgSrc": "raf.png" ,
+            "title": "Американо",
+            "cost": "4.80",
+            "size": "0,5л"
+        },
+        {
+            "id": "06",
+            "imgSrc": "raf.png" ,
+            "title": "Фраппе",
+            "cost": "2.80",
+            "size": "0,5л"
+        },
+        {
+            "id": "07",
+            "imgSrc": "raf.png" ,
+            "title": "Франко",
+            "cost": "2,80",
+            "size": "0,5л"
+        },
+        {
+            "id": "08",
+            "imgSrc": "raf.png" ,
+            "title": "Арабика",
+            "cost": "2.80",
+            "size": "0,5л"
+        }
+    
+
+]

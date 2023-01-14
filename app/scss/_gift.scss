@@ -1,0 +1,90 @@
+.gift{
+    position: fixed;
+    top: 20%;
+    right: 2%;
+    background-color: $orange;
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease-out;
+    box-shadow: 0px 0px 42px 0px rgba(234, 119, 69, 0.32);
+    z-index: 10;
+    @media(any-hover:hover){
+        &:hover{
+            background-color: darken($color: $orange, $amount: 10%);
+        }
+    }
+    img{
+        max-width: 30px;
+        max-height: 30px;
+        object-fit: cover;
+    }
+}
+.popup__gift{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    user-select: none;
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+
+    &.open{
+        opacity: 1;
+        pointer-events: all;
+        visibility: visible;
+    }
+    &-overlay{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: $brown, $alpha: 0.7);
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        justify-content: center
+    }
+}
+.gift-content{
+    position: relative;
+    max-width: 400px;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $white;
+    border-radius: 5px;
+    flex-direction: column;
+    padding: 20px 50px;
+    &__title{
+        font-size: 20px;
+        color: $orange;
+        font-weight: bold;
+        text-align: center;
+    }
+    &__img{
+        max-width: 50px;
+        max-height: 50px;
+        object-fit: cover;
+        margin-top: 20px;
+    }
+    &__close{
+        position: absolute;
+        right: 2%;
+        top: 2%;
+        font-size: 40px;
+        color: $orange;
+        transition: color 0.3s ease-out;
+        @media(any-hover:hover){
+            &:hover{
+                color: darken($color: $orange, $amount: 30%);
+            }
+        }
+    }
+}

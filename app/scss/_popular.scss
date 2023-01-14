@@ -1,0 +1,112 @@
+.popular{
+    padding: clamp(1.438rem, -0.157rem + 7.97vw, 5.375rem) 0 clamp(2.5rem, 0.399rem + 10.51vw, 7.688rem) 0;
+    background-color: $green;
+    &__title{
+        text-align: center;
+        margin-bottom: clamp(1.875rem, 0.356rem + 7.59vw, 5.625rem);
+    }
+}
+.slider-item{
+        user-select: none;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        background-color: $white;
+        padding: clamp(0.938rem, 0.684rem + 1.27vw, 1.563rem);
+        border-radius: 10px;
+        box-shadow: 0px 6px 6px rgba(38, 64, 52, 0.9);
+    &__title{
+        font-weight: 600;
+        font-size: clamp(1rem, 0.899rem + 0.51vw, 1.25rem);
+        line-height: 161.6%;
+        color: $green;
+        margin-bottom: 10px;
+    }
+    &__cost, &__size{
+        font-weight: 300;
+        font-size: clamp(0.75rem, 0.699rem + 0.25vw, 0.875rem);
+        line-height: 161.6%;
+        color: $brown;
+        display: block;
+        margin-bottom: clamp(0.625rem, 0.498rem + 0.63vw, 0.938rem);
+        span{
+            font-weight: 600;
+        }
+    }
+    &__button{
+        padding: clamp(1rem, 0.899rem + 0.51vw, 1.25rem) clamp(1.438rem, 0.754rem + 3.42vw, 3.125rem);
+    }
+    &__img{
+        display: block;
+        margin-bottom: 15px;
+        max-width: clamp(5.625rem, 4.106rem + 7.59vw, 9.375rem);
+        max-height: clamp(5rem, 3.734rem + 6.33vw, 8.125rem);
+        img{
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;         
+        }
+    }
+}
+.slider-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slider-button{
+    svg{
+        path{
+            stroke: $white;
+        }
+    }
+}
+.slider-button-prev{
+    position: absolute;
+    left: 5%;
+    transform: rotate(180deg);
+    padding-top: 15px;
+    top: 50%;
+}
+.slider-button-next{
+    position: absolute;
+    right: 5%;
+    top: 50%;
+}
+.swiper-button-lock{
+    display: block;
+}
+.popular{
+    position: relative;
+}
+.counter-products{
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 5px;
+    &__item, .arrow{
+        margin-top: clamp(1.25rem, 1.006rem + 1.22vw, 1.875rem);
+        width: 25px;
+        height: 25px;
+        border-radius: 5px;
+        background-color: $brown;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        @media(any-hover:hover){
+            &:hover{
+                background-color: darken($color: $brown, $amount: 10%);
+            }
+        }
+    }
+}
+.swiper-button-disabled{
+    svg{
+        path{
+            stroke: $orange;
+        }
+    }
+}

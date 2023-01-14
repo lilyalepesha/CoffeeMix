@@ -1,0 +1,322 @@
+.header{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    &.scroll{
+        position: fixed;
+        z-index: 20;
+        background-color: rgba($color: #fff, $alpha: 0.8);
+        animation-name: fadeInUp;
+        animation-duration: 0.7s;
+    }
+    &__logo{
+        font-weight: 700;
+        font-size: clamp(1rem, 0.797rem + 1.01vw, 1.5rem);
+        line-height: 29px;
+        color: lighten($color: $green, $amount: 15%);
+        position: relative;
+        z-index: 10;
+        transition: color 0.3s ease-out;
+        @media(any-hover:hover){
+            &:hover{
+                color: $orange;
+            }
+          
+        }
+        @media (max-width: $md2){
+            flex: 1 1 auto;
+        }
+    }
+    &__main{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: clamp(0.938rem, 0.558rem + 1.9vw, 1.875rem) 0;
+        column-gap: 5px;
+    }
+}
+.menu{
+    &__header-list{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: clamp(1.875rem, 1.267rem + 3.04vw, 3.375rem);
+        flex-wrap: wrap;
+        @media(max-width: $md2){
+            flex-direction: column;
+        }
+    }
+    &__header-item{
+        @media(max-width: $md2){
+            &:not(:last-child){
+                margin-bottom: 80px;
+            }
+        }
+    }
+    &__header-link{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        color: $green;
+        transition: color 0.3s ease-out;
+        cursor: pointer;
+        @media(any-hover:hover){
+            &:hover{
+                color: $orange;
+            }
+        }
+        @media(max-width: $md2){
+            color: $orange;
+            font-weight: bold;
+            font-size: clamp(1.875rem, 1.369rem + 2.53vw, 3.125rem);
+            @media(any-hover:hover){
+                &:hover{
+                    color: $white;
+                }
+            }
+        }
+    }
+    &__header-nav{
+        position: relative;
+        z-index: 5;
+        @media(max-width: $md2){
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            background-color: darken($color: $brown, $amount: 15%);
+            height: 100%;
+            overflow: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            left: -100%;
+            transition: left 0.4s ease-out;
+        }
+        &.active{
+            left: 0;
+        }
+    }
+}
+.form-header{
+    position: relative;
+    flex: 0 1 calc(250px/$maxWidth)*100%;
+    transition: all 1s ease-out;
+    @media (max-width: $md2){
+        top: -500%;
+        transition: all 1s ease-out;
+        display: none;
+    }
+    &.active{
+        display: block;
+        position: absolute;
+        width: 95%;
+        top: 100%;
+    }
+    &__input{
+        width: 100%;
+        background-color: transparent;
+        border: 2px solid $green;
+        border-radius: 5px;
+        outline: none;
+        padding: 8px 15px;
+        &::placeholder{
+            color: $green;
+            font-size: 14px;
+        }
+        &:focus{
+            box-shadow: 0px 2px 17px 0px rgba(58, 99, 81, 0.2);
+        }
+    }
+    &__search{
+        position: absolute;
+        right: 3%;
+        top: 20%;
+        svg{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+.actions-header{
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: clamp(0.625rem, 0.119rem + 2.53vw, 1.875rem);
+    &__star{
+        svg{
+            width: clamp(1.125rem, 0.771rem + 1.77vw, 2rem); 
+            path{
+                fill: lighten($color: $green, $amount: 15%);
+            } 
+            @media(any-hover:hover){
+                &:hover{
+                    path{
+                        fill: $orange;
+                    }
+                }
+            }    
+        }
+    }
+    &__sign{
+        svg{
+            width: clamp(1.125rem, 0.771rem + 1.77vw, 2rem);  
+            path{
+                fill: lighten($color: $green, $amount: 15%);
+            } 
+            @media(any-hover:hover){
+                &:hover{
+                    path{
+                        fill: $orange;
+                    }
+                }
+            }    
+        }     
+    }
+    &__account{
+        svg{
+            width: clamp(1.125rem, 0.771rem + 1.77vw, 2rem);  
+            path{
+                fill: lighten($color: $green, $amount: 15%);
+            } 
+            @media(any-hover:hover){
+                &:hover{
+                    path{
+                        fill: $orange;
+                    }
+                }
+            }    
+        }
+    }
+}
+.cart-header{
+    position: relative;
+    &__link{
+        transition: all 0.3s ease-out;
+        svg{
+            width: clamp(1.125rem, 0.771rem + 1.77vw, 2rem);
+            path{
+                fill: lighten($color: $green, $amount: 15%);
+            } 
+        }
+        @media(any-hover:hover){
+            &:hover{
+                path{
+                    fill: $orange;
+                }
+            }
+        }
+    }
+    &__count{
+        position: absolute;
+        right: -25%;
+        top: -15%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $orange;
+        font-size: 12px;
+        border-radius: 20px;
+        width: 20px;
+        color: $white;
+        font-weight: bold;
+        height: 20px;
+        @media(max-width: $md4){
+            width: 15px;
+            height: 15px;
+            font-size: 10px;
+            right: -30%;
+            top: -7%;
+        }
+    }
+
+}
+.icon__menu{
+    display: none;
+    @media (max-width: $md2){
+        position: relative;
+        z-index: 10;
+        display: block;
+        width: clamp(0.938rem, 0.684rem + 1.27vw, 1.563rem);
+        height: clamp(0.875rem, 0.723rem + 0.76vw, 1.25rem);
+        cursor: pointer;
+        span{
+            transition: all 0.4s ease-out;
+            margin-right: 24px;
+            position: absolute;
+            top: calc(50% - 1px);
+            transform: translateY(-50%);
+            left: 0;
+            height: 2px;
+            width: 100%;
+            border-radius: 5px;
+            background-color: $orange;
+            @media(any-hover:hover){
+                color: lighten($color: $orange, $amount: 10%);
+            }
+            &:first-child{
+                top: 0;
+            }
+            &:last-child{
+                top: auto;
+                bottom: 0;
+            }
+        }
+    }
+    &.active{
+        span{
+            transform: scale(0);
+            &:first-child{
+                top: 0;
+                top: calc(50% - 1px);
+                transform: rotate(-45deg);
+            }
+            &:last-child{
+                top: auto;
+                bottom: 0;
+                bottom: calc(50% - 1px);
+                transform: rotate(45deg);
+            }
+        }
+    }
+  
+}
+.search-button{
+    position: relative;
+    z-index: 10;
+    display: none;
+    @media (max-width: $md2){
+        display: block;
+        path{
+            fill: lighten($color: $green, $amount: 15%);
+        } 
+        svg{
+            width: clamp(1rem, 0.595rem + 2.03vw, 2rem);
+            height: 26px;
+            transition: all 0.3s ease-out;
+
+            @media(any-hover:hover){
+                &:hover{
+                    path{
+                        fill: $orange;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes fadeInUp{
+    from{
+        opacity: 0;
+        top: -50px;
+    }   
+    to{
+        opacity: 1;
+        top: 0;
+    }
+}

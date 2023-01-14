@@ -1,0 +1,74 @@
+.hero{
+    padding: clamp(7.188rem, 4.909rem + 11.39vw, 12.813rem) 0 clamp(3.75rem, 2.358rem + 6.96vw, 7.188rem) 0;
+    &__container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 20px;
+        @media(max-width: $md4){
+            row-gap: 50px;
+            flex-direction: column;
+        }
+    }
+    &__title{
+        color: $green;
+        margin-bottom: clamp(0.938rem, 0.178rem + 3.8vw, 2.813rem);
+    }
+    &__text{
+        margin-bottom: clamp(2.188rem, 1.479rem + 3.54vw, 3.938rem);
+    }
+    &__content{
+        max-width: 465px;
+    }
+    &__buttons{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        column-gap: clamp(1.75rem, 1.193rem + 2.78vw, 3.125rem);
+    }
+    &__number-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 10px;
+        svg{
+            transition: all 0.3s ease-out;
+            width: clamp(1rem, 0.595rem + 2.03vw, 2rem);
+            height: clamp(1.125rem, 0.771rem + 1.77vw, 2rem);
+            path{
+                fill: $orange;
+            }
+        }
+        @media(any-hover:hover){
+            &:hover{
+                svg{
+                    path{
+                        fill: darken($color: $orange, $amount: 20%);
+                    }
+                }
+            }
+        }
+    }
+    &__number{
+        font-size: clamp(0.875rem, 0.824rem + 0.25vw, 1rem);
+        color: $orange;
+        transition: color 0.3s ease-out;
+        @media(any-hover:hover){
+            &:hover{
+                color: darken($color: $orange, $amount: 20%);
+            }
+        }
+    }
+}
+.hero__img{
+    max-width: 700px;
+    max-height: 700px;
+
+    .img-first{
+        position: absolute;
+    }
+    .img-second{
+        position: relative;
+
+    }
+}

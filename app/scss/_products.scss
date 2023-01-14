@@ -1,0 +1,205 @@
+.drinks{
+    padding: clamp(8.75rem, 6.799rem + 9.76vw, 13.75rem) 0 clamp(2.5rem, 1.524rem + 4.88vw, 5rem) 0;
+    &__title{
+        color: $brown;
+    }
+}
+.cart-list{
+    overflow: auto;
+}
+.products__items{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: clamp(1.25rem, 0.762rem + 2.44vw, 2.5rem);
+    row-gap: clamp(1.563rem, 0.953rem + 3.05vw, 3.125rem);
+    flex-wrap: wrap;
+    column-gap: clamp(0.938rem, 0.694rem + 1.22vw, 1.563rem);
+}
+.products__item{
+    max-width: 255px;
+    border-radius: 5px;
+    user-select: none;
+    background-color: $green;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 420px;
+    height: 100%;
+    min-height: 420px;
+    max-height: 420px;
+    display: none;
+    &.visible{
+        display: block;
+    }
+    &-img{
+        img{
+            min-height: 170px;
+            max-height: 170px;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    &-content{
+        padding: 20px;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+    &-descr{
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 173.02%;
+        color: $white;
+        margin-bottom: 10px;
+    }
+    &-title{
+        font-weight: 600;
+        font-size: clamp(1.125rem, 0.979rem + 0.73vw, 1.5rem);
+        line-height: 29px;
+        color: $white;
+        margin-bottom: clamp(0.625rem, 0.503rem + 0.61vw, 0.938rem);
+    }
+    &-wrapper{
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: clamp(2.5rem, 1.768rem + 3.66vw, 4.375rem);
+    }
+    &-wrapper-cost{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 132.52%;
+        color: $white;
+    }
+    &-wrapper-button{
+        background-color: $orange;
+        font-weight: 600;
+        font-size: clamp(0.875rem, 0.826rem + 0.24vw, 1rem);
+        line-height: 19px; 
+        color: $brown;
+        padding: 12px 21px;
+        border-radius: 20px;
+    }
+}
+.desert{
+    padding-bottom: clamp(3.75rem, 2.287rem + 7.32vw, 7.5rem);
+    &__title{
+        color: $brown;
+    }
+}
+.cart-list__article{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.cart-wrapper__img{
+    margin: 15px auto;
+    display: block;
+    max-width: 80%;
+    max-height: 190px;
+    object-fit: cover;
+    overflow: hidden;
+}
+.cart-wrapper__text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cart-wrapper__cost{
+    font-weight: bold;
+    color: $brown;
+}
+.counter{
+    margin-top: 15px;
+    user-select: none;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    &__input{
+        user-select: none;
+        text-align: center;
+        max-width: 50px;
+        border: none;
+        outline: none;
+        font-weight: bold;
+    }
+    &__minus, 
+    &__plus{
+        user-select: none;
+        background-color: $orange;
+        width: 25px;
+        height: 25px;
+        border-radius: 5px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        transition: 0.3s ease-out; 
+        color: $white;
+        font-weight: bold;
+        @media(any-hover:hover){
+            &:hover{
+                background-color: darken($color: $orange, $amount: 10%);
+            }
+        }
+    }
+}
+.cart-list{
+    user-select: none;
+}
+.cart-list::-webkit-scrollbar{
+    width: 5px;
+    background-color: darken($color: $white, $amount: 10%);
+}
+.cart-list::-webkit-scrollbar-thumb{
+    background-color: $brown;
+}
+.cart-list{
+    position: relative;
+    padding: 0 15px;
+}
+.toppings__select{
+    padding: 10px 10px;
+    background-color: $orange;
+    color: $white;
+    border: none;
+    outline: none;
+    margin-top: 15px;
+}
+#about-products{
+    background-color: $brown;
+}
+.drinks__pagination, .desert__pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+    margin-top: 25px;
+    user-select: none;
+    &-item{
+        background-color: $brown;
+        width: 25px;
+        height: 25px;
+        border-radius: 5px;
+        color: $white;
+        font-weight: bold;
+        text-align: center;
+        font-size: 12px;
+        transition: background-color 0.3s ease-out;
+        @media(any-hover:hover){
+            &:hover{
+                background-color: $orange;
+            }
+        }
+    }
+}
+.cart-wrapper__text{
+    display: flex;
+    column-gap: 15px;
+    flex-wrap: wrap;
+}
